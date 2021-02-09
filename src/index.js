@@ -1,12 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './index.css';
+
+// import App from './Containers/App';
+// import AppHooks from './Containers/AppHooks';
+import AppRedux from './Containers/AppRedux';
+
+import 'tachyons'; // Templates
+
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { searchRobots, requestRobots } from './reducers';
+
+// middlewares
+import { createLogger } from 'redux-logger';
+import thunkMiddleware from 'redux-thunk';
+
+const logger = createLogger();
+const rootReducer = combineReducers({ searchRobots, requestRobots })
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware, logger))
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      {/* <App/> */}
+      {/* <AppHooks/> */}
+      <AppRedux/>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
