@@ -23,9 +23,9 @@ const store = createStore(rootReducer, applyMiddleware(thunkMiddleware, logger))
 
 ReactDOM.render(
   <React.StrictMode>
+    {/* <App/> */}
+    {/* <AppHooks/> */}
     <Provider store={store}>
-      {/* <App/> */}
-      {/* <AppHooks/> */}
       <AppRedux/>
     </Provider>
   </React.StrictMode>,
