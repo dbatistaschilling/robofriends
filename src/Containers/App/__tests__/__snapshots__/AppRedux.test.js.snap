@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppRedux Tests Filters robots correctly 1`] = `
+<div
+  className="tc"
+>
+  <Memo(Header) />
+  <SearchBox />
+  <Scroll>
+    <ErrorBoundry>
+      <CardList
+        robots={
+          Array [
+            Object {
+              "email": "john@gmail.com",
+              "id": 3,
+              "name": "john",
+            },
+          ]
+        }
+      />
+    </ErrorBoundry>
+  </Scroll>
+</div>
+`;
+
+exports[`AppRedux Tests Renders the App Redux page with no robots without crashing 1`] = `
+<div
+  className="tc"
+>
+  <Memo(Header) />
+  <SearchBox />
+  <Scroll>
+    <h1>
+      Loading...
+    </h1>
+  </Scroll>
+</div>
+`;

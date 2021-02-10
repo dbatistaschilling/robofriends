@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import CardList from "../Components/CardList";
-import SearchBox from "../Components/SearchBox";
-import Scroll from "../Components/Scroll";
-import ErrorBoundry from "../Components/ErrorBoundry";
+import CardList from "../../Components/CardList";
+import SearchBox from "../../Components/SearchBox";
+import Scroll from "../../Components/Scroll";
+import ErrorBoundry from "../../Components/ErrorBoundry";
 
-function App() {
+function AppHooks() {
   const [robots, setRobots] = useState([]);
   const [searchfield, setSearchfield] = useState('');
   const [count, setCount] = useState(0);
@@ -44,4 +44,4 @@ function App() {
     )
 }
 
-export default App;
+export default AppHooks;

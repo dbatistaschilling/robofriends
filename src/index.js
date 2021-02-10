@@ -4,15 +4,15 @@ import reportWebVitals from './reportWebVitals';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import './index.css';
 
-// import App from './Containers/App';
-// import AppHooks from './Containers/AppHooks';
-import AppRedux from './Containers/AppRedux';
+// import App from './containers/App/App';
+// import AppHooks from './containers/App/AppHooks';
+import AppReduxConnect from './Containers/App/AppRedux.connect';
 
 import 'tachyons'; // Templates
 
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
-import { searchRobots, requestRobots } from './reducers';
+import { searchRobots, requestRobots } from './Containers';
 
 // middlewares
 import { createLogger } from 'redux-logger';
@@ -24,10 +24,10 @@ const store = createStore(rootReducer, applyMiddleware(thunkMiddleware, logger))
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App/> */}
-    {/* <AppHooks/> */}
+    {/* <App />, */}
+    {/* <AppHooks />, */}
     <Provider store={store}>
-      <AppRedux/>
+      <AppReduxConnect />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
